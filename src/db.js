@@ -9,7 +9,7 @@ const client = new MongoClient(uri);
 export async function connectDB() {
   try {
     await client.connect();
-    console.log("Connected to DataBase");
+    return client.db();
   } catch (error) {
     console.error("Error do connect do database", error);
   }
