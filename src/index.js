@@ -8,6 +8,7 @@ import { connectDB } from "./db.js";
 import resgiterRouter from "./routes/registerRouter.js";
 import loginRouter from "./routes/loginRouter.js";
 import deleteRouter from "./routes/deleteRouter.js";
+import updateRouter from "./routes/updateRouter.js";
 
 const app = express();
 app.use(express.json());
@@ -19,6 +20,7 @@ await connectDB();
 app.use(resgiterRouter);
 app.use(loginRouter);
 app.use(deleteRouter);
+app.use(updateRouter);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
